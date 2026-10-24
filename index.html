@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zona Austral de Chile</title>
+<style>
+  :root{
+    --verde:#1F4D45;
+    --verde-claro:#3E7C6A;
+    --arena:#F4EFE6;
+    --tinta:#22333B;
+    --hielo:#E8F4F8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:Georgia,serif;color:var(--tinta);background:var(--arena);line-height:1.6;}
+  header{background:var(--verde);color:#fff;padding:60px 20px;text-align:center;}
+  header h1{font-size:2.2em;letter-spacing:2px;}
+  header p{max-width:640px;margin:16px auto 0;opacity:.9;}
+  nav{background:var(--verde-claro);display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:10px;}
+  nav a{color:#fff;text-decoration:none;padding:8px 14px;border-radius:6px;font-size:.95em;}
+  nav a:hover{background:rgba(255,255,255,.2);}
+  section{padding:50px 20px;max-width:900px;margin:0 auto;}
+  section h2{font-size:1.8em;color:var(--verde);margin-bottom:10px;border-bottom:3px solid var(--verde);display:inline-block;}
+  section h3{color:var(--verde-claro);margin:20px 0 8px;}
+  ul{padding-left:22px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:16px;}
+  .card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:16px;}
+  .card strong{color:var(--verde);}
+  .stats{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:20px;}
+  .stat{background:var(--verde);color:#fff;border-radius:10px;padding:20px 28px;text-align:center;min-width:140px;}
+  .stat .num{font-size:2em;font-weight:bold;}
+  .stat .lab{font-size:.85em;opacity:.9;}
+  .foto{background:var(--hielo);border:2px dashed var(--verde-claro);border-radius:10px;padding:40px;text-align:center;color:var(--verde-claro);margin-top:16px;}
+  .quiz{background:#fff;border-radius:10px;padding:20px;margin-top:16px;border:1px solid #ddd;}
+  .quiz p{font-weight:bold;margin-bottom:10px;}
+  .quiz button{display:block;width:100%;text-align:left;margin:6px 0;padding:10px;border:1px solid #ccc;border-radius:8px;background:#fafafa;cursor:pointer;font-size:.95em;}
+  .quiz button:hover{background:var(--hielo);}
+  .quiz .ok{background:#d4edda;border-color:#28a745;}
+  .quiz .mal{background:#f8d7da;border-color:#dc3545;}
+  .expl{font-size:.9em;color:#555;margin-top:8px;display:none;}
+  .roles p{display:flex;justify-content:space-between;border-bottom:1px dashed #ccc;padding:8px 0;}
+  .roles span{color:var(--verde-claro);font-style:italic;}
+  footer{background:var(--verde);color:#fff;text-align:center;padding:30px 20px;margin-top:40px;font-size:.9em;}
+  footer a{color:#fff;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>ZONA AUSTRAL</h1>
+  <p>Geografía de Chile — Un viaje por el extremo sur del país: fiordos, glaciares, estepa y viento, desde Aysén hasta la Antártica Chilena.</p>
+</header>
+
+<nav>
+  <a href="#relieve">Relieve</a>
+  <a href="#clima">Clima</a>
+  <a href="#agua">Agua</a>
+  <a href="#recursos">Recursos</a>
+  <a href="#maqueta">Maqueta</a>
+  <a href="#leyenda">Leyenda</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#equipo">Equipo</a>
+</nav>
+
+<div class="stats">
+  <div class="stat"><div class="num">2</div><div class="lab">Regiones</div></div>
+  <div class="stat"><div class="num">3</div><div class="lab">Climas</div></div>
+  <div class="stat"><div class="num">Baker</div><div class="lab">Río de mayor caudal</div></div>
+  <div class="stat"><div class="num">56°S</div><div class="lab">Cerca del Cabo de Hornos</div></div>
+</div>
+
+<!-- 01 RELIEVE -->
+<section id="relieve">
+  <h2>01 · Relieve</h2>
+  <h3>Montañas que se hunden en el mar</h3>
+  <p>La Cordillera de los Andes baja de altura y se fragmenta. La Cordillera de la Costa se sumerge y forma islas, archipiélagos, canales y fiordos.</p>
+  <h3>Formas destacadas</h3>
+  <ul>
+    <li>Campos de Hielo Norte y Sur</li>
+    <li>Torres del Paine y Cordillera Darwin</li>
+    <li>Pampa patagónica, al este</li>
+    <li>Estrecho de Magallanes y Cabo de Hornos</li>
+  </ul>
+  <div class="foto">[ Dibujo esquemático de oeste a este, sin escala ]</div>
+</section>
+
+<!-- 02 CLIMA -->
+<section id="clima">
+  <h2>02 · Clima y vegetación</h2>
+  <h3>Del bosque lluvioso a la estepa ventosa</h3>
+  <p>El viento del oeste y la cercanía al mar y al polo hacen que el clima cambie mucho entre la costa y el interior.</p>
+  <div class="grid">
+    <div class="card"><strong>Frío oceánico lluvioso</strong><p>Costa occidental: lluvias muy abundantes y bosque siempreverde.</p></div>
+    <div class="card"><strong>Estepario frío</strong><p>Este de Magallanes: pocas lluvias, viento fuerte y pastizales de coirón.</p></div>
+    <div class="card"><strong>Frío de altura y polar</strong><p>Cumbres, hielos y Antártica: temperaturas bajo cero casi todo el año.</p></div>
+  </div>
+  <h3>Bosque magallánico</h3>
+  <p>Lenga, coihue de Magallanes y ñirre, árboles adaptados al frío y al viento.</p>
+</section>
+
+<!-- 03 HIDROGRAFÍA -->
+<section id="agua">
+  <h2>03 · Hidrografía</h2>
+  <h3>Ríos, lagos y glaciares</h3>
+  <p>Ríos caudalosos que nacen en lagos y glaciares y descargan en fiordos y canales.</p>
+  <ul>
+    <li>Río Baker, el de mayor caudal de Chile</li>
+    <li>Ríos Pascua y Serrano</li>
+    <li>Lagos General Carrera y O'Higgins</li>
+    <li>Glaciares Grey y Pío XI</li>
+  </ul>
+</section>
+
+<!-- 04 RECURSOS -->
+<section id="recursos">
+  <h2>04 · Recursos naturales</h2>
+  <h3>Lo que la tierra y el mar entregan</h3>
+  <div class="grid">
+    <div class="card"><strong>Energía</strong><p>Petróleo y gas natural en Magallanes; carbón en isla Riesco.</p></div>
+    <div class="card"><strong>Ganadería y pesca</strong><p>Ovinos en la estepa; salmonicultura y pesca en los canales.</p></div>
+    <div class="card"><strong>Bosques</strong><p>Madera nativa y bosques protegidos.</p></div>
+    <div class="card"><strong>Turismo</strong><p>Parques nacionales, glaciares y navegación por los fiordos.</p></div>
+  </div>
+</section>
+
+<!-- MAQUETA -->
+<section id="maqueta">
+  <h2>Nuestra maqueta</h2>
+  <h3>La zona austral en 3D</h3>
+  <p>Aquí mostramos la maqueta terminada, con su relieve, clima y vegetación.</p>
+  <div class="foto">[ aquí irá la maqueta ]</div>
+  <div class="foto">[ y sus detalles ]</div>
+  <div class="foto">[ y el equipo trabajando ]</div>
+</section>
+
+<!-- LEYENDA -->
+<section id="leyenda">
+  <h2>Rotulación y simbología</h2>
+  <h3>Orientación</h3>
+  <p><strong>N</strong> — El norte apunta hacia arriba. La zona austral queda en el extremo sur de Chile.</p>
+  <h3>Leyenda</h3>
+  <ul>
+    <li>Bosque</li>
+    <li>Estepa</li>
+    <li>Cordillera</li>
+    <li>Glaciares y hielo</li>
+    <li>Ríos, lagos y mar</li>
+  </ul>
+  <h3>Escala</h3>
+  <p>Escala de la maqueta: 1 : ______ &nbsp;|&nbsp; 0 ______ km</p>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz">
+  <h2>Para la presentación oral</h2>
+  <h3>¿Cuánto sabes de la zona austral?</h3>
+  <div id="quizContainer"></div>
+</section>
+
+<!-- EQUIPO -->
+<section id="equipo">
+  <h2>El equipo</h2>
+  <h3>Cómo la hicimos</h3>
+  <p>Planificación, materiales y trabajo en equipo.</p>
+  <h3>Materiales</h3>
+  <ul>
+    <li>Base de cartón o plumavit</li>
+    <li>Masa, papel maché o yeso para el relieve</li>
+    <li>Pinturas, algodón y material reciclado</li>
+  </ul>
+  <h3>Roles del equipo</h3>
+  <div class="roles">
+    <p>Investigación <span>______</span></p>
+    <p>Construcción <span>______</span></p>
+    <p>Rotulación <span>______</span></p>
+    <p>Presentación <span>______</span></p>
+  </div>
+  <h3>Presentación oral</h3>
+  <p>Explicamos relieve, clima, hidrografía y recursos de la zona, y respondemos preguntas con seguridad.</p>
+</section>
+
+<footer>
+  <p>Gracias por recorrer la zona austral</p>
+  <p>Maqueta Zonas Geográficas de Chile · Tecnología 6° Básico</p>
+  <p><a href="#top">Volver arriba</a></p>
+</footer>
+
+<script>
+  // Quiz interactivo
+  const preguntas = [
+    {q:"¿Cuál es el río de mayor caudal de Chile?", r:["Río Pascua","Río Baker","Río Serrano","Río Pío XI"], c:1, e:"El río Baker es el de mayor caudal del país."},
+    {q:"¿Qué clima predomina en la costa occidental?", r:["Estepario frío","Frío de altura","Frío oceánico lluvioso","Polar seco"], c:2, e:"La costa occidental tiene lluvias muy abundantes y bosque siempreverde."},
+    {q:"¿Qué árboles forman el bosque magallánico?", r:["Pino y ciprés","Lenga, coihue y ñirre","Algarrobo y quillay","Araucaria y roble"], c:1, e:"Lenga, coihue de Magallanes y ñirre se adaptan al frío y al viento."},
+    {q:"¿Qué recurso energético hay en Magallanes?", r:["Carbón","Petróleo y gas natural","Uranio","Cobre"], c:1, e:"Hay petróleo y gas natural en Magallanes, y carbón en isla Riesco."},
+    {q:"¿Dónde queda la Cordillera de la Costa en la zona austral?", r:["Sube de altura","Se sumerge y forma islas y fiordos","Desaparece por completo","Se une a los Andes"], c:1, e:"La Cordillera de la Costa se sumerge formando islas, archipiélagos, canales y fiordos."}
+  ];
+
+  const cont = document.getElementById('quizContainer');
+  preguntas.forEach((p, i) => {
+    const div = document.createElement('div');
+    div.className = 'quiz';
+    div.innerHTML = `<p>${i+1}. ${p.q}</p>`;
+    p.r.forEach((op, j) => {
+      const btn = document.createElement('button');
+      btn.textContent = op;
+      btn.onclick = () => responder(btn, j, p);
+      div.appendChild(btn);
+    });
+    const ex = document.createElement('div');
+    ex.className = 'expl';
+    ex.id = 'expl' + i;
+    div.appendChild(ex);
+    cont.appendChild(div);
+  });
+
+  function responder(btn, idx, p){
+    const botones = btn.parentElement.querySelectorAll('button');
+    botones.forEach(b => { b.disabled = true; b.classList.remove('ok','mal'); });
+    if(idx === p.c){
+      btn.classList.add('ok');
+      btn.parentElement.querySelector('.expl').innerHTML = '✅ Correcto. ' + p.e;
+    } else {
+      btn.classList.add('mal');
+      botones[p.c].classList.add('ok');
+      btn.parentElement.querySelector('.expl').innerHTML = '❌ Incorrecto. ' + p.e;
+    }
+    btn.parentElement.querySelector('.expl').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
