@@ -161,8 +161,8 @@
   </ul>
 </section>
 
-<!-- Foto de fondo: Base de las Torres del Paine, Marina Zvada (Pexels) -->
-<section id="clima" class="revelar" style="background-image:url('fotos/paine.jpg');background-size:cover;background-position:center;border-radius:30px;padding:60px 20px;color:#fff;">
+<!-- Foto de fondo: Torres del Paine (Unsplash, licencia libre) -->
+<section id="clima" class="revelar" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80');background-size:cover;background-position:center;border-radius:30px;padding:60px 20px;color:#fff;">
   <div style="position:absolute;inset:0;background:rgba(14,77,100,.6);border-radius:30px;"></div>
   <div style="position:relative;z-index:2;">
     <span class="etiqueta" style="background:rgba(255,255,255,.2);color:#fff;">02 · Viento y lluvia</span>
@@ -192,15 +192,19 @@
   </ul>
 </section>
 
-<section id="recursos" class="revelar" style="background:linear-gradient(150deg,#2C3E50 0%,#4A7C59 100%);border-radius:30px;padding:60px 20px;color:#fff;">
-  <span class="etiqueta" style="background:rgba(255,255,255,.2);color:#fff;">04 · Tierra y mar</span>
-  <h2 style="color:#fff;">Recursos naturales <span class="rayo">🌿</span></h2>
-  <h3 style="color:#E8F4F8;">Lo que la tierra y el mar entregan</h3>
-  <div class="grid">
-    <div class="card revelar del-1"><span class="icono">⚡</span><strong>Energía</strong>Petróleo y gas natural en Magallanes; carbón en isla Riesco.</div>
-    <div class="card revelar del-2"><span class="icono">🐑</span><strong>Ganadería y pesca</strong>Ovinos en la estepa; salmonicultura y pesca en los canales.</div>
-    <div class="card revelar del-3"><span class="icono">🌲</span><strong>Bosques</strong>Madera nativa y bosques protegidos.</div>
-    <div class="card revelar del-4"><span class="icono">🏔️</span><strong>Turismo</strong>Parques nacionales, glaciares y navegación por los fiordos.</div>
+<!-- Foto de fondo: fiordo y bosque patagónico (Unsplash, licencia libre) -->
+<section id="recursos" class="revelar" style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1600&q=80');background-size:cover;background-position:center;border-radius:30px;padding:60px 20px;color:#fff;">
+  <div style="position:absolute;inset:0;background:linear-gradient(150deg,rgba(44,62,80,.8),rgba(74,124,89,.75));border-radius:30px;"></div>
+  <div style="position:relative;z-index:2;">
+    <span class="etiqueta" style="background:rgba(255,255,255,.2);color:#fff;">04 · Tierra y mar</span>
+    <h2 style="color:#fff;">Recursos naturales <span class="rayo">🌿</span></h2>
+    <h3 style="color:#E8F4F8;">Lo que la tierra y el mar entregan</h3>
+    <div class="grid">
+      <div class="card revelar del-1"><span class="icono">⚡</span><strong>Energía</strong>Petróleo y gas natural en Magallanes; carbón en isla Riesco.</div>
+      <div class="card revelar del-2"><span class="icono">🐑</span><strong>Ganadería y pesca</strong>Ovinos en la estepa; salmonicultura y pesca en los canales.</div>
+      <div class="card revelar del-3"><span class="icono">🌲</span><strong>Bosques</strong>Madera nativa y bosques protegidos.</div>
+      <div class="card revelar del-4"><span class="icono">🏔️</span><strong>Turismo</strong>Parques nacionales, glaciares y navegación por los fiordos.</div>
+    </div>
   </div>
 </section>
 
@@ -311,12 +315,16 @@
   },{threshold:0.5});
   document.querySelectorAll('[data-contador]').forEach(el=>obsCont.observe(el));
 
-  // VISOR 3D — cambia estas rutas cuando subas las fotos de la maqueta
+  // VISOR 3D — fotos públicas mientras no subas las de la maqueta
   const FOTOS = [
-    'fotos/vista1.jpg','fotos/vista2.jpg','fotos/vista3.jpg',
-    'fotos/vista4.jpg','fotos/vista5.jpg','fotos/vista6.jpg',
-    'fotos/vista7.jpg','fotos/vista8.jpg','fotos/vista9.jpg',
-    'fotos/vista10.jpg','fotos/vista11.jpg','fotos/vista12.jpg'
+    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900&q=80',
+    'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=900&q=80',
+    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=900&q=80',
+    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&q=80',
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80',
+    'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=900&q=80',
+    'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=900&q=80',
+    'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=900&q=80'
   ];
   const escenario = document.getElementById('escenario');
   const pista = document.getElementById('pista');
@@ -353,7 +361,8 @@
     {q:"¿Qué clima predomina en la costa occidental?",r:["Estepario frío","Frío de altura","Frío oceánico lluvioso","Polar seco"],c:2,e:"La costa occidental tiene lluvias muy abundantes y bosque siempreverde."},
     {q:"¿Qué árboles forman el bosque magallánico?",r:["Pino y ciprés","Lenga, coihue y ñirre","Algarrobo y quillay","Araucaria y roble"],c:1,e:"Lenga, coihue de Magallanes y ñirre se adaptan al frío y al viento."},
     {q:"¿Qué recurso energético hay en Magallanes?",r:["Carbón","Petróleo y gas natural","Uranio","Cobre"],c:1,e:"Hay petróleo y gas natural en Magallanes, y carbón en isla Riesco."},
-    {q:"¿Dónde queda la Cordillera de la Costa en la zona austral?",r:["Sube de altura","Se sumerge y forma islas y fiordos","Desaparece por completo","Se une a los Andes"],c:1,e:"La Cordillera de la Costa se sumerge formando islas, archipiélagos, canales y fiordos."}
+    {q:"¿Dónde queda la Cord
+          {q:"¿Dónde queda la Cordillera de la Costa en la zona austral?",r:["Sube de altura","Se sumerge y forma islas y fiordos","Desaparece por completo","Se une a los Andes"],c:1,e:"La Cordillera de la Costa se sumerge formando islas, archipiélagos, canales y fiordos."}
   ];
   const cont=document.getElementById('quizContainer');
   preguntas.forEach((p,i)=>{
@@ -367,11 +376,6 @@
     cont.appendChild(div);
   });
   function responder(btn,idx,p){
-    const botones=btn.parentElement.querySelectorAll('button');
-    botones.forEach(b=>{b.disabled=true;b.classList.remove('ok','mal');});
-    if(idx===p.c){ btn.classList.add('ok'); btn.parentElement.querySelector('.expl').innerHTML='✅ Correcto. '+p.e; }
-    else { btn.classList.add('mal'); botones[p.c].classList.add
-            function responder(btn,idx,p){
     const botones=btn.parentElement.querySelectorAll('button');
     botones.forEach(b=>{b.disabled=true;b.classList.remove('ok','mal');});
     if(idx===p.c){ btn.classList.add('ok'); btn.parentElement.querySelector('.expl').innerHTML='✅ Correcto. '+p.e; }
