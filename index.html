@@ -380,3 +380,25 @@
   preguntas.forEach((p,i)=>{
     const div=document.createElement('div');div.className='quiz';div.innerHTML=`<p>${i+1}. ${p.q}</p>`;
     p.r.forEach((op,j)=>{const b=document.createElement('button');b.textContent=op;b.onclick=()=>
+  const cont=document.getElementById('quizContainer');
+  preguntas.forEach((p,i)=>{
+    const div=document.createElement('div');div.className='quiz';div.innerHTML=`<p>${i+1}. ${p.q}</p>`;
+    p.r.forEach((op,j)=>{
+      const b=document.createElement('button');b.textContent=op;
+      b.onclick=()=>responder(b,j,p);
+      div.appendChild(b);
+    });
+    const ex=document.createElement('div');ex.className='expl';div.appendChild(ex);
+    cont.appendChild(div);
+  });
+  function responder(btn,idx,p){
+    const botones=btn.parentElement.querySelectorAll('button');
+    botones.forEach(b=>{b.disabled=true;b.classList.remove('ok','mal');});
+    if(idx===p.c){ btn.classList.add('ok'); btn.parentElement.querySelector('.expl').innerHTML='✅ Correcto. '+p.e; }
+    else { btn.classList.add('mal'); botones[p.c].classList.add('ok'); btn.parentElement.querySelector('.expl').innerHTML='❌ Incorrecto. '+p.e; }
+    btn.parentElement.querySelector('.expl').style.display='block';
+  }
+</script>
+
+</body>
+</html>
