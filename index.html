@@ -6,13 +6,13 @@
 <title>Zona Austral de Chile</title>
 <style>
   :root{
-    --glaciar:#0B3B4A;      /* azul profundo de fiordos */
+    --glaciar:#0B3B4A;
     --glaciar-claro:#1A5B6E;
-    --turquesa:#2E8B8B;     /* agua de los canales */
-    --musgo:#4A7C59;        /* bosque magallánico */
-    --nieve:#F5F8FA;        /* hielo y estepa */
-    --pizarra:#2C3E50;      /* roca patagónica */
-    --cobre:#C97B4A;        /* atardecer patagónico */
+    --turquesa:#2E8B8B;
+    --musgo:#4A7C59;
+    --nieve:#F5F8FA;
+    --pizarra:#2C3E50;
+    --cobre:#C97B4A;
     --tinta:#1C2B33;
     --sombra:0 20px 50px rgba(0,0,0,.18);
   }
@@ -20,10 +20,8 @@
   html{scroll-behavior:smooth;}
   body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--tinta);background:var(--nieve);line-height:1.75;overflow-x:hidden;}
 
-  /* ===== Barra de progreso de scroll ===== */
   #progreso{position:fixed;top:0;left:0;height:4px;width:0%;background:linear-gradient(90deg,var(--cobre),var(--turquesa));z-index:200;transition:width .1s linear;}
 
-  /* ===== HEADER cinematográfico con parallax ===== */
   header{position:relative;height:100vh;min-height:620px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;overflow:hidden;}
   header .bg{position:absolute;inset:-20%;background:linear-gradient(160deg,#0B3B4A 0%,#1A5B6E 40%,#2E8B8B 100%);}
   header .bg::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,224L60,213.3C120,203,240,181,360,186.7C480,192,600,224,720,229.3C840,235,960,213,1080,197.3C1200,181,1320,171,1380,165.3L1440,160L1440,320L0,320Z"></path></svg>') no-repeat bottom;background-size:cover;}
@@ -31,18 +29,16 @@
   header .contenido{z-index:3;padding:0 20px;}
   header h1{font-size:clamp(2.6em,8vw,5em);font-weight:800;letter-spacing:8px;text-transform:uppercase;line-height:1.05;
     background:linear-gradient(90deg,#fff,#E8F4F8 60%,#C97B4A);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-    text-shadow:none;animation:entrada 1.3s cubic-bezier(.2,.9,.3,1.1) both;}
+    animation:entrada 1.3s cubic-bezier(.2,.9,.3,1.1) both;}
   header .sub{max-width:660px;margin:22px auto 0;opacity:.95;font-size:1.1em;font-weight:300;letter-spacing:.5px;animation:entrada 1.6s .25s cubic-bezier(.2,.9,.3,1.1) both;}
   header .scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:3;color:#fff;opacity:.85;font-size:.9em;letter-spacing:3px;text-transform:uppercase;animation:rebote 2s infinite;}
   @keyframes rebote{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,-14px);}}
   @keyframes entrada{from{opacity:0;transform:translateY(60px) scale(.95);}to{opacity:1;transform:translateY(0) scale(1);}}
 
-  /* ===== NAV ===== */
   nav{position:sticky;top:0;z-index:100;background:rgba(11,59,74,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:14px;box-shadow:0 6px 25px rgba(0,0,0,.3);}
   nav a{color:#fff;text-decoration:none;padding:8px 18px;border-radius:40px;font-size:.92em;letter-spacing:.5px;transition:all .35s ease;border:1px solid transparent;}
   nav a:hover{background:var(--cobre);border-color:#fff;transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.35);}
 
-  /* ===== Secciones ===== */
   section{position:relative;padding:100px 20px;max-width:1100px;margin:0 auto;}
   .etiqueta{font-size:.8em;letter-spacing:4px;color:var(--cobre);text-transform:uppercase;font-weight:700;}
   section h2{font-size:clamp(1.9em,4.5vw,2.6em);color:var(--glaciar);margin:10px 0 20px;font-weight:800;position:relative;}
@@ -50,12 +46,10 @@
   section h3{color:var(--turquesa);margin:30px 0 10px;font-size:1.3em;font-weight:700;}
   ul{padding-left:22px;} li{margin:8px 0;}
 
-  /* ===== Reveal avanzado ===== */
   .revelar{opacity:0;transform:translateY(50px) scale(.97);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.9,.3,1);}
   .revelar.visible{opacity:1;transform:translateY(0) scale(1);}
   .del-1{transition-delay:.12s;} .del-2{transition-delay:.24s;} .del-3{transition-delay:.36s;} .del-4{transition-delay:.48s;}
 
-  /* ===== Stats con contador ===== */
   .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:22px;max-width:1100px;margin:50px auto;padding:0 20px;}
   .stat{background:linear-gradient(150deg,var(--glaciar),var(--glaciar-claro));color:#fff;border-radius:22px;padding:30px 20px;text-align:center;box-shadow:var(--sombra);position:relative;overflow:hidden;transition:transform .4s ease,box-shadow .4s ease;}
   .stat::before{content:'';position:absolute;top:-40%;left:-40%;width:80%;height:80%;background:radial-gradient(circle,rgba(201,123,74,.35),transparent 70%);opacity:0;transition:opacity .4s;}
@@ -64,7 +58,6 @@
   .stat .num{font-size:2.5em;font-weight:800;color:var(--cobre);}
   .stat .lab{font-size:.85em;opacity:.92;margin-top:6px;letter-spacing:.5px;}
 
-  /* ===== Tarjetas ===== */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;margin-top:26px;}
   .card{background:#fff;border-radius:20px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.08);border-top:5px solid var(--turquesa);transition:transform .5s ease,box-shadow .5s ease;position:relative;overflow:hidden;}
   .card::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);transition:left .7s ease;}
@@ -73,15 +66,6 @@
   .card .icono{font-size:2em;margin-bottom:10px;display:block;}
   .card strong{color:var(--glaciar);font-size:1.1em;display:block;margin-bottom:8px;}
 
-  /* ===== Secciones con fondo parallax ===== */
-  .parallax-sec{position:relative;background-attachment:fixed;background-size:cover;background-position:center;color:#fff;}
-  .parallax-sec .oscurecer{position:absolute;inset:0;background:rgba(11,59,74,.72);}
-  .parallax-sec .contenido{position:relative;z-index:2;}
-  .parallax-sec h2{color:#fff;}
-  .parallax-sec h3{color:#E8F4F8;}
-  .parallax-sec .etiqueta{color:var(--cobre);}
-
-  /* ===== VISOR 3D ===== */
   .visor3d{position:relative;width:100%;max-width:580px;margin:30px auto;perspective:1400px;user-select:none;-webkit-user-select:none;cursor:grab;touch-action:none;}
   .visor3d:active{cursor:grabbing;}
   .visor3d .escenario{position:relative;width:100%;padding-top:75%;border-radius:26px;overflow:hidden;background:radial-gradient(circle at 50% 30%,#1A5B6E,#0B3B4A);box-shadow:inset 0 0 90px rgba(0,0,0,.45),0 30px 60px rgba(0,0,0,.35);}
@@ -96,7 +80,6 @@
   .visor3d .controles button:hover{background:rgba(255,255,255,.4);}
   .visor3d .hint{position:absolute;bottom:55px;left:50%;transform:translateX(-50%);color:#fff;font-size:.85em;opacity:.75;z-index:5;text-align:center;pointer-events:none;}
 
-  /* ===== Quiz ===== */
   .quiz{background:#fff;border-radius:20px;padding:28px;margin-top:16px;border:1px solid #eee;box-shadow:0 8px 25px rgba(0,0,0,.07);}
   .quiz p{font-weight:700;margin-bottom:14px;color:var(--glaciar);font-size:1.05em;}
   .quiz button{display:block;width:100%;text-align:left;margin:9px 0;padding:14px 18px;border:2px solid #e0e0e0;border-radius:12px;background:#fafafa;cursor:pointer;font-size:.95em;transition:all .3s ease;font-family:inherit;}
@@ -105,12 +88,10 @@
   .quiz .mal{background:#f8d7da;border-color:#dc3545;color:#721c24;}
   .expl{font-size:.9em;color:#555;margin-top:12px;display:none;animation:entrada .5s ease;}
 
-  /* ===== Equipo ===== */
   .roles p{display:flex;justify-content:space-between;border-bottom:1px dashed #ccc;padding:12px 0;transition:all .3s ease;}
   .roles p:hover{background:#EFF7F7;padding-left:14px;border-radius:8px;}
   .roles span{color:var(--turquesa);font-style:italic;}
 
-  /* ===== Footer ===== */
   footer{background:linear-gradient(150deg,#0B3B4A,#1C2B33);color:#fff;text-align:center;padding:55px 20px;margin-top:40px;position:relative;overflow:hidden;}
   footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--cobre),var(--turquesa),var(--cobre));}
   footer a{color:var(--cobre);text-decoration:none;}
@@ -127,7 +108,6 @@
 
 <div id="progreso"></div>
 
-<!-- HEADER -->
 <header id="top">
   <div class="bg" id="bgHeader"></div>
   <div class="contenido">
@@ -137,7 +117,6 @@
   <div class="scroll-hint">▼ Desliza para explorar ▼</div>
 </header>
 
-<!-- NAV -->
 <nav>
   <a href="#relieve">Relieve</a>
   <a href="#clima">Clima</a>
@@ -149,7 +128,6 @@
   <a href="#equipo">Equipo</a>
 </nav>
 
-<!-- STATS -->
 <div class="stats">
   <div class="stat"><div class="num" data-contador="2">0</div><div class="lab">Regiones</div></div>
   <div class="stat"><div class="num" data-contador="3">0</div><div class="lab">Climas</div></div>
@@ -157,7 +135,6 @@
   <div class="stat"><div class="num" data-contador="56">0</div><div class="lab">°S cerca del Cabo de Hornos</div></div>
 </div>
 
-<!-- 01 RELIEVE -->
 <section id="relieve" class="revelar">
   <span class="etiqueta">01 · Cordillera y hielo</span>
   <h2>Relieve</h2>
@@ -172,25 +149,24 @@
   </ul>
 </section>
 
-<!-- 02 CLIMA (fondo parallax) -->
-<section id="clima" class="parallax-sec revelar" style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1600');">
-  <div class="oscurecer"></div>
-  <div class="contenido">
+<!-- Foto de fondo: Base de las Torres del Paine, Marina Zvada (Pexels) -->
+<section id="clima" class="revelar" style="background-image:url('fotos/paine.jpg');background-size:cover;background-position:center;border-radius:30px;padding:60px 20px;color:#fff;">
+  <div style="position:absolute;inset:0;background:rgba(11,59,74,.65);border-radius:30px;"></div>
+  <div style="position:relative;z-index:2;">
     <span class="etiqueta">02 · Viento y lluvia</span>
-    <h2>Clima y vegetación</h2>
-    <h3>Del bosque lluvioso a la estepa ventosa</h3>
+    <h2 style="color:#fff;">Clima y vegetación</h2>
+    <h3 style="color:#E8F4F8;">Del bosque lluvioso a la estepa ventosa</h3>
     <p>El viento del oeste y la cercanía al mar y al polo hacen que el clima cambie mucho entre la costa y el interior.</p>
     <div class="grid">
       <div class="card revelar del-1"><span class="icono">🌧️</span><strong>Frío oceánico lluvioso</strong>Costa occidental: lluvias muy abundantes y bosque siempreverde.</div>
       <div class="card revelar del-2"><span class="icono">🌬️</span><strong>Estepario frío</strong>Este de Magallanes: pocas lluvias, viento fuerte y pastizales de coirón.</div>
       <div class="card revelar del-3"><span class="icono">❄️</span><strong>Frío de altura y polar</strong>Cumbres, hielos y Antártica: temperaturas bajo cero casi todo el año.</div>
     </div>
-    <h3>Bosque magallánico</h3>
+    <h3 style="color:#E8F4F8;">Bosque magallánico</h3>
     <p>Lenga, coihue de Magallanes y ñirre, árboles adaptados al frío y al viento.</p>
   </div>
 </section>
 
-<!-- 03 HIDROGRAFÍA -->
 <section id="agua" class="revelar">
   <span class="etiqueta">03 · Ríos y glaciares</span>
   <h2>Hidrografía</h2>
@@ -204,23 +180,18 @@
   </ul>
 </section>
 
-<!-- 04 RECURSOS (fondo parallax) -->
-<section id="recursos" class="parallax-sec revelar" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600');">
-  <div class="oscurecer"></div>
-  <div class="contenido">
-    <span class="etiqueta">04 · Tierra y mar</span>
-    <h2>Recursos naturales</h2>
-    <h3>Lo que la tierra y el mar entregan</h3>
-    <div class="grid">
-      <div class="card revelar del-1"><span class="icono">⚡</span><strong>Energía</strong>Petróleo y gas natural en Magallanes; carbón en isla Riesco.</div>
-      <div class="card revelar del-2"><span class="icono">🐑</span><strong>Ganadería y pesca</strong>Ovinos en la estepa; salmonicultura y pesca en los canales.</div>
-      <div class="card revelar del-3"><span class="icono">🌲</span><strong>Bosques</strong>Madera nativa y bosques protegidos.</div>
-      <div class="card revelar del-4"><span class="icono">🏔️</span><strong>Turismo</strong>Parques nacionales, glaciares y navegación por los fiordos.</div>
-    </div>
+<section id="recursos" class="revelar" style="background:linear-gradient(150deg,#2C3E50 0%,#4A7C59 100%);border-radius:30px;padding:60px 20px;color:#fff;">
+  <span class="etiqueta">04 · Tierra y mar</span>
+  <h2 style="color:#fff;">Recursos naturales</h2>
+  <h3 style="color:#E8F4F8;">Lo que la tierra y el mar entregan</h3>
+  <div class="grid">
+    <div class="card revelar del-1"><span class="icono">⚡</span><strong>Energía</strong>Petróleo y gas natural en Magallanes; carbón en isla Riesco.</div>
+    <div class="card revelar del-2"><span class="icono">🐑</span><strong>Ganadería y pesca</strong>Ovinos en la estepa; salmonicultura y pesca en los canales.</div>
+    <div class="card revelar del-3"><span class="icono">🌲</span><strong>Bosques</strong>Madera nativa y bosques protegidos.</div>
+    <div class="card revelar del-4"><span class="icono">🏔️</span><strong>Turismo</strong>Parques nacionales, glaciares y navegación por los fiordos.</div>
   </div>
 </section>
 
-<!-- MAQUETA 3D -->
 <section id="maqueta" class="revelar">
   <span class="etiqueta">★ · Nuestra maqueta</span>
   <h2>La zona austral en 3D</h2>
@@ -237,7 +208,6 @@
   </div>
 </section>
 
-<!-- LEYENDA -->
 <section id="leyenda" class="revelar">
   <span class="etiqueta">Simbología</span>
   <h2>Rotulación y leyenda</h2>
@@ -255,7 +225,6 @@
   <p>Escala de la maqueta: 1 : ______ &nbsp;|&nbsp; 0 ______ km</p>
 </section>
 
-<!-- QUIZ -->
 <section id="quiz" class="revelar">
   <span class="etiqueta">Práctica</span>
   <h2>Para la presentación oral</h2>
@@ -263,7 +232,6 @@
   <div id="quizContainer"></div>
 </section>
 
-<!-- EQUIPO -->
 <section id="equipo" class="revelar">
   <span class="etiqueta">Nosotros</span>
   <h2>El equipo</h2>
@@ -293,26 +261,26 @@
 </footer>
 
 <script>
-  // ===== Barra de progreso de scroll =====
+  // Barra de progreso de scroll
   const barra = document.getElementById('progreso');
   window.addEventListener('scroll',()=>{
     const alto = document.documentElement.scrollHeight - window.innerHeight;
     barra.style.width = (window.scrollY / alto * 100) + '%';
   });
 
-  // ===== Parallax del header =====
+  // Parallax del header
   const bgHeader = document.getElementById('bgHeader');
   window.addEventListener('scroll',()=>{
     bgHeader.style.transform = 'translateY(' + (window.scrollY * 0.4) + 'px)';
   });
 
-  // ===== Reveal en scroll =====
+  // Reveal en scroll
   const obs = new IntersectionObserver((entradas)=>{
     entradas.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
   },{threshold:0.12});
   document.querySelectorAll('.revelar').forEach(s=>obs.observe(s));
 
-  // ===== Contadores animados =====
+  // Contadores animados
   const obsCont = new IntersectionObserver((entradas)=>{
     entradas.forEach(e=>{
       if(e.isIntersecting){
@@ -331,8 +299,7 @@
   },{threshold:0.5});
   document.querySelectorAll('[data-contador]').forEach(el=>obsCont.observe(el));
 
-  // ===== VISOR 3D =====
-  // CAMBIA ESTO cuando tengas las fotos de la maqueta
+  // VISOR 3D — cambia estas rutas cuando subas las fotos de la maqueta
   const FOTOS = [
     'fotos/vista1.jpg','fotos/vista2.jpg','fotos/vista3.jpg',
     'fotos/vista4.jpg','fotos/vista5.jpg','fotos/vista6.jpg',
@@ -368,7 +335,7 @@
   document.getElementById('btnZoom').onclick=(e)=>{zoom=!zoom;escenario.style.transform=zoom?'scale(1.4)':'scale(1)';escenario.style.transition='transform .5s ease';};
   setInterval(()=>{ if(auto) mostrar(indice+1); },700);
 
-  // ===== Quiz =====
+  // Quiz
   const preguntas=[
     {q:"¿Cuál es el río de mayor caudal de Chile?",r:["Río Pascua","Río Baker","Río Serrano","Río Pío XI"],c:1,e:"El río Baker es el de mayor caudal del país."},
     {q:"¿Qué clima predomina en la costa occidental?",r:["Estepario frío","Frío de altura","Frío oceánico lluvioso","Polar seco"],c:2,e:"La costa occidental tiene lluvias muy abundantes y bosque siempreverde."},
@@ -376,10 +343,6 @@
     {q:"¿Qué recurso energético hay en Magallanes?",r:["Carbón","Petróleo y gas natural","Uranio","Cobre"],c:1,e:"Hay petróleo y gas natural en Magallanes, y carbón en isla Riesco."},
     {q:"¿Dónde queda la Cordillera de la Costa en la zona austral?",r:["Sube de altura","Se sumerge y forma islas y fiordos","Desaparece por completo","Se une a los Andes"],c:1,e:"La Cordillera de la Costa se sumerge formando islas, archipiélagos, canales y fiordos."}
   ];
-  const cont=document.getElementById('quizContainer');
-  preguntas.forEach((p,i)=>{
-    const div=document.createElement('div');div.className='quiz';div.innerHTML=`<p>${i+1}. ${p.q}</p>`;
-    p.r.forEach((op,j)=>{const b=document.createElement('button');b.textContent=op;b.onclick=()=>
   const cont=document.getElementById('quizContainer');
   preguntas.forEach((p,i)=>{
     const div=document.createElement('div');div.className='quiz';div.innerHTML=`<p>${i+1}. ${p.q}</p>`;
